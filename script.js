@@ -1,28 +1,27 @@
-// Person Class
+
 class Person {
-	
   constructor(name, age) {
-    this.#name = name; 
-    this.#age = age;   
+    this.name = name; 
+    this.age = age;   
   }
 
   // Getter for name
-  get name() {
-    return this.#name;
-  }
-
-  // Setter for age
-  set age(newAge) {
-    this.#age = newAge;
+  getName() {
+    return this.name;
   }
 
   
-  get age() {
-    return this.#age;
+  setAge(newAge) {
+    this.age = newAge;
+  }
+
+  
+  getAge() {
+    return this.age;
   }
 }
 
-
+// Student Class (inherits from Person)
 class Student extends Person {
   study() {
     console.log(`${this.name} is studying.`);
@@ -36,11 +35,11 @@ class Teacher extends Person {
   }
 }
 
-// Example Usage
+
 const person = new Person("John", 25);
 console.log(person.name);  // Output: John
 
-person.age = 30;  
+person.age = 30; 
 console.log(person.age);  
 
 const student = new Student("Alice", 22);
