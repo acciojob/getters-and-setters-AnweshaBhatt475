@@ -24,9 +24,22 @@ class Employee extends Person {
   }
 }
 
-// Example Usage
-const person = new Person("Alice", 25);
-person.greet(); // Output: Hello, my name is Alice, I am 25 years old.
+// Student Class
+class Student extends Person {
+  study() {
+    console.log(`${this.name} is studying.`);
+  }
+}
 
-const employee = new Employee("Bob", 30, "Manager");
-employee.jobGreet(); // Output: Hello, my name is Bob, I am 30 years old, and my job title is Manager.
+// Teacher Class
+class Teacher extends Person {
+  teach() {
+    console.log(`${this.name} is teaching.`);
+  }
+}
+
+// Expose classes globally for Cypress
+window.Person = Person;
+window.Employee = Employee;
+window.Student = Student;
+window.Teacher = Teacher;
