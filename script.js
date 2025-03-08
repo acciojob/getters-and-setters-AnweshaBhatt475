@@ -1,7 +1,7 @@
 // Person Class
 class Person {
   constructor(name, age) {
-    this._name = name;  // Use an underscore to indicate private-like properties
+    this._name = name;
     this._age = age;
   }
 
@@ -24,6 +24,7 @@ class Person {
 // Student Class (inherits from Person)
 class Student extends Person {
   study() {
+    // Direct console log for "study" action
     console.log(`${this.name} is studying.`);
   }
 }
@@ -31,6 +32,7 @@ class Student extends Person {
 // Teacher Class (inherits from Person)
 class Teacher extends Person {
   teach() {
+    // Direct console log for "teach" action
     console.log(`${this.name} is teaching.`);
   }
 }
