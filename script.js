@@ -1,37 +1,34 @@
 // Person Class
 class Person {
   constructor(name, age) {
-    this.name = name;
-    this.age = age;
+    this._name = name;  // Use an underscore to indicate private-like properties
+    this._age = age;
   }
 
-  greet() {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
-  }
-}
-
-// Employee Class
-class Employee extends Person {
-  constructor(name, age, jobTitle) {
-    super(name, age); // Call the parent class (Person) constructor
-    this.jobTitle = jobTitle;
+  // Getter for name
+  get name() {
+    return this._name;
   }
 
-  jobGreet() {
-    console.log(
-      `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`
-    );
+  // Setter for age
+  set age(age) {
+    this._age = age;
+  }
+
+  // Getter for age
+  get age() {
+    return this._age;
   }
 }
 
-// Student Class
+// Student Class (inherits from Person)
 class Student extends Person {
   study() {
     console.log(`${this.name} is studying.`);
   }
 }
 
-// Teacher Class
+// Teacher Class (inherits from Person)
 class Teacher extends Person {
   teach() {
     console.log(`${this.name} is teaching.`);
@@ -40,6 +37,5 @@ class Teacher extends Person {
 
 // Expose classes globally for Cypress
 window.Person = Person;
-window.Employee = Employee;
 window.Student = Student;
 window.Teacher = Teacher;
