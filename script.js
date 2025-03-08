@@ -10,21 +10,20 @@ class Person {
     return this._name;
   }
 
-  // Setter for age
-  set age(age) {
-    this._age = age;
-  }
-
   // Getter for age
   get age() {
     return this._age;
+  }
+
+  // Setter for age
+  set age(age) {
+    this._age = age;
   }
 }
 
 // Student Class (inherits from Person)
 class Student extends Person {
   study() {
-    // Direct console log for "study" action
     console.log(`${this.name} is studying.`);
   }
 }
@@ -32,7 +31,6 @@ class Student extends Person {
 // Teacher Class (inherits from Person)
 class Teacher extends Person {
   teach() {
-    // Direct console log for "teach" action
     console.log(`${this.name} is teaching.`);
   }
 }
